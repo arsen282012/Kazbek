@@ -1,0 +1,362 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>С Днём Отца</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:linear-gradient(180deg,#7fdcff,#ffd6e7);
+text-align:center;
+overflow:hidden;
+min-height:100vh;
+}
+
+.container{
+padding:18px;
+}
+
+.photo{
+width:100%;
+max-width:390px;
+height:240px;
+
+object-fit:cover;
+
+border-radius:22px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.25);
+}
+
+h1{
+
+margin-top:20px;
+
+font-size:34px;
+
+}
+
+.buttons{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+button{
+
+padding:18px;
+
+font-size:21px;
+
+border:none;
+
+border-radius:18px;
+
+background:white;
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+#finish{
+
+display:none;
+
+padding-bottom:60px;
+
+}
+
+.final{
+
+width:100%;
+
+max-width:390px;
+
+height:260px;
+
+object-fit:cover;
+
+border-radius:22px;
+
+}
+
+.ok{
+
+font-size:36px;
+
+margin-top:16px;
+
+color:#00a83b;
+
+font-weight:bold;
+
+}
+
+.text{
+
+margin-top:18px;
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#ff006f;
+
+}
+
+.qr{
+
+margin-top:24px;
+
+width:240px;
+
+background:white;
+
+padding:12px;
+
+border-radius:20px;
+
+}
+
+.heart{
+
+position:fixed;
+
+pointer-events:none;
+
+z-index:999;
+
+animation:fly linear;
+
+}
+
+@keyframes fly{
+
+0%{
+
+transform:
+translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-170vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="quiz">
+
+<img
+class="photo"
+src="https://images.unsplash.com/photo-1511988617509-a57c8a288659">
+
+<h1>
+
+Сегодня какой день?
+
+</h1>
+
+<div class="buttons">
+
+<button onclick="bad()">
+День матери
+</button>
+
+<button onclick="good()">
+День отца
+</button>
+
+<button onclick="bad()">
+День рождения
+</button>
+
+<button onclick="bad()">
+Праздник
+</button>
+
+</div>
+
+</div>
+
+<div id="finish">
+
+<img
+class="final"
+src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9">
+
+<div class="ok">
+
+✅ Правильно ответил!
+
+</div>
+
+<div class="text">
+
+🎉 С ДНЁМ ОТЦА! 🎉
+
+<br><br>
+
+Омурунуз узун болсун 💙  
+Коп жашан 😊  
+Ийгиликтерди каалайм 🚀  
+Каздый день жылмайып журун ☀️  
+Иштериниздерге да ийгилик каалайм ✨
+
+<br><br>
+
+Куттуктайм ❤️
+
+Можно мне 250 сом
+
+</div>
+
+<img
+class="qr"
+src="WhatsApp Image 2026-06-21 at 15.12.34.jpeg">
+
+<div style="margin-top:10px;font-size:18px">
+
+📱 Наведи камеру
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function bad(){
+
+alert(
+"❌ Неправильно"
+);
+
+}
+
+function good(){
+
+document
+.getElementById(
+"quiz"
+)
+.style
+.display=
+"none";
+
+document
+.getElementById(
+"finish"
+)
+.style
+.display=
+"block";
+
+for(
+let i=0;
+i<1200;
+i++
+){
+
+setTimeout(()=>{
+
+let h=
+document
+.createElement(
+"div"
+);
+
+h.className=
+"heart";
+
+h.innerHTML=
+"❤️";
+
+h.style.left=
+Math.random()
+*100
++"vw";
+
+h.style.top=
+"100vh";
+
+h.style.fontSize=
+(
+20+
+Math.random()
+*80
+)
++"px";
+
+h.style.animationDuration=
+(
+2+
+Math.random()
+*5
+)
++"s";
+
+document.body
+.appendChild(
+h
+);
+
+setTimeout(()=>{
+
+h.remove();
+
+},7000);
+
+},
+
+i*5);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+```
+
